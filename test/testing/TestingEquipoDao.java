@@ -7,6 +7,7 @@ package testing;
 
 import dao.EquipoDao;
 import org.junit.Test;
+import pojo.Equipo;
 
 /**
  *
@@ -16,10 +17,12 @@ public class TestingEquipoDao {
     @Test
     public void hello(){
         EquipoDao equipoDao = new EquipoDao();
-        equipoDao.saveEquipo("Alemania", "Europeo");
-        //System.out.println(equipoDao.getEquipoById(1));
-        
-        
-        
+        //equipoDao.saveEquipo("México", "Americano");
+        System.out.println(equipoDao.getEquipoById(3).getNombre());
+        Equipo equipito = new Equipo();
+        equipito.setNombre("Portugal");
+        equipito.setContinente("Europeo");
+        boolean si =equipoDao.updatebyId(2, equipito);
+        System.out.println(si);
     }
 }

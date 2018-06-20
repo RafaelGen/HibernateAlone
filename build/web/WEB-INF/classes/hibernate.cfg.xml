@@ -9,6 +9,7 @@
     <property name="hibernate.connection.password">mysqlroot</property>
     
     <property name="hibernate.hbm2ddl.auto">create</property>
+    <property name="hibernate.hbm2ddl.auto">update</property>
     
     <mapping class="pojo.Equipo"></mapping>
   </session-factory>

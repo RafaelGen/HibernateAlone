@@ -40,4 +40,18 @@ public class EquipoDao {
         return false;
     }
     
+    public boolean updatebyId(int id, Equipo equipito){
+        Equipo equipoAModificar = getEquipoById(id);
+        try{
+            Transaction transaccion = session.beginTransaction();
+            equipoAModificar.setNombre(equipito.getNombre());
+            equipoAModificar.setContinente(equipito.getContinente());
+            session.update(equipoAModificar);
+            transaccion.commit();
+            return true;
+        }catch(Exception ex){
+            
+        }return false;
+    }
+    
 }
